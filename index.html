@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <script src="library.js" defer></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id="mainPage">
+
+
+        <div>
+            <button id="addNew">Add new book record</button>
+        </div>
+
+        <table class="styled-table" id="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Number of Pages</th>
+                    <th>Read?</th>
+                    <th>Delete Record</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="form-popup" id="myForm">
+        <form>
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title"><br>
+
+            <label for="author">Author:</label><br>
+            <input type="text" id="author" name="author"><br>
+
+            <label for="pages">Number of Pages:</label><br>
+            <input type="text" id="pages" name="pages"><br>
+
+            <div>
+                <label for="read">Read:</label>
+                <input type="checkbox" id="pages" name="pages">
+            </div>
+            <input type="submit" id="submit" name="submit" value="Submit"><br>
+        </form>
+    </div>
+
+
+
+</body>
+
+</html>
