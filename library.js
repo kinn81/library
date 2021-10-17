@@ -13,8 +13,6 @@ const addNew = document.getElementById("addNew"); //add new book button
 const table = document.getElementById("table"); //tabel element
 const form = document.getElementById("myForm"); //new book form
 
-
-
 //When 'Add new book record' clicked then display form
 addNew.addEventListener('click', () => {
     formOverlay.style.display = "block";
