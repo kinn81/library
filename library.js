@@ -8,16 +8,26 @@ function Book(title, author, numPages, hasBeenRead, id) {
 }
 
 const mainPage = document.getElementById("mainPage"); //main page div container
-//const form = document.getElementById("myForm"); //new book form
-const form = document.getElementById("overlay"); //new book form
+const formOverlay = document.getElementById("overlay"); //form Overlay
 const addNew = document.getElementById("addNew"); //add new book button
 const table = document.getElementById("table"); //tabel element
+const form = document.getElementById("myForm"); //new book form
 
-//When 'Add new book record' clicked  display form
+
+
+//When 'Add new book record' clicked then display form
 addNew.addEventListener('click', () => {
-    form.style.display = "block";
-    mainPage.className += "blur"
+    formOverlay.style.display = "block";
+    mainPage.className += "blur";
 });
+
+formOverlay.addEventListener('click', function (e) {
+    let isFormClicked = form.contains(e.target);
+    if (!isFormClicked) {
+        resetForm();
+    }
+}
+);
 
 //Add a new book to the library
 function addBookToLibrary(title, author, numPages, read) {
@@ -61,16 +71,20 @@ function refreshHTMLTable() {
 }
 
 function deleteBookRecord(e) {
-    console.log(e.currentTarget.parentElement.parentElement.rowIndex);
     myLibrary.splice(e.currentTarget.parentElement.parentElement.rowIndex - 1, 1);
     refreshHTMLTable();
 }
 
 function submitForm(that) {
     addBookToLibrary(that.title.value, that.author.value, that.pages.value, that.read.checked);
+    resetForm();
+}
+
+function resetForm() {
     document.getElementById("formData").reset();
-    form.style.display = "none";
+    formOverlay.style.display = "none";
     mainPage.classList.remove("blur");
+
 }
 
 addBookToLibrary('War and Peace', 'Leo Tolstoy', '1,225', false); //id = 0
