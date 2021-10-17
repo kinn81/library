@@ -47,15 +47,16 @@ function refreshHTMLTable() {
     myLibrary.forEach(book => {
         newRow = document.createElement("tr");
         tbodyRef.appendChild(newRow);
-        for (const property in book) {
+        for (const property in book) { //loop through book properties adding cells to the row
             newCell = document.createElement("td");
             if (property === 'title' || property === 'author' || property === 'numPages') {
                 const newText = document.createTextNode(book[property]);
                 newCell.appendChild(newText);
             } else if (property === 'hasBeenRead') {
                 const newCheckBox = document.createElement("INPUT");
-                newCheckBox.type = 'checkbox'; //newCheckBox.setAttribute("type","checkbox");
+                newCheckBox.type = 'checkbox'; 
                 newCheckBox.checked = book[property];
+                newCheckBox.addEventListener('change', updateCheckBox);
                 newCell.appendChild(newCheckBox);
             }
             newRow.appendChild(newCell);
@@ -68,6 +69,10 @@ function refreshHTMLTable() {
         newRow.appendChild(newCell);
     }
     )
+}
+
+function updateCheckBox(e) {
+    myLibrary[e.target.parentElement.parentElement.rowIndex -1].hasBeenRead = e.target.checked;
 }
 
 function deleteBookRecord(e) {
@@ -84,7 +89,6 @@ function resetForm() {
     document.getElementById("formData").reset();
     formOverlay.style.display = "none";
     mainPage.classList.remove("blur");
-
 }
 
-addBookToLibrary('War and Peace', 'Leo Tolstoy', '1225', false); //id = 0
+addBookToLibrary('War and Peace', 'Leo Tolstoy', '1225', false);
