@@ -8,36 +8,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet"> 
 
 </head>
 
 <body>
     <div id="mainPage">
-
-
+        <h1>My Library System</h1>
         <div>
-            <button id="addNew">Add new book record</button>
+            <button id="addNew">Add Another Book</button>
         </div>
 
-        <table class="styled-table" id="table">
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Number of Pages</th>
-                    <th>Read?</th>
-                    <th>Delete Record</th>
-                </tr>
-            </thead>
-            <tbody>
-                
-            </tbody>
-        </table>
+        <div id="tableDiv">
+            <table class="styled-table" id="table">
+                <thead>
+                    <tr>
+                        <th width="35%">Title</th>
+                        <th width="25%">Author</th>
+                        <th width="15%">Num Pages</th>
+                        <th width="8%">Read?</th>
+                        <th width="17%">Delete Record</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
     </div>
 
-
+<div id="overlay">
     <div class="form-popup" id="myForm">
-        <form>
+        <form id="formData" onsubmit="submitForm(this);return false">
             <label for="title">Title:</label><br>
             <input type="text" id="title" name="title"><br>
 
@@ -49,12 +53,12 @@
 
             <div>
                 <label for="read">Read:</label>
-                <input type="checkbox" id="pages" name="pages">
+                <input type="checkbox" id="read" name="read">
             </div>
             <input type="submit" id="submit" name="submit" value="Submit"><br>
         </form>
     </div>
-
+</div>
 
 
 </body>

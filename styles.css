@@ -1,19 +1,43 @@
-.styled-table {
-    border-collapse: collapse;
-    margin: 25px 0;
+#addNew {
+    
+    padding: 7px;
+    border: 1px solid #7192c9;
+    border-radius: 5px;
+    font-weight: 5500;
     font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    font-family: sans-serif ;
 }
 
-.blur {
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-    filter: blur(5px);
-    opacity: 0.6;
+#mainPage {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding-top: 15px;
+    
+}
+
+h1 {
+    padding:0;
+    margin:0;
+    font-family: 'Rampart One', cursive;
+    font-size: 60px;;
+}
+
+#tableDiv {
+    display:flex;
+    max-width: 900px;
+    width: 100%;
+}
+
+.styled-table {
+    
+    border-collapse: collapse;    
+    font-size: 0.9em;
+    font-family: sans-serif;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    flex: 1 1 100%;   
 }
 
 .styled-table thead tr {
@@ -25,7 +49,9 @@
 .styled-table th,
 .styled-table td {
     padding: 12px 15px;
-    text-align: center;    
+    text-align: center;   
+    
+    
 }
 
 .styled-table tbody tr {
@@ -40,24 +66,48 @@
     border-bottom: 2px solid #7192c9;
 }
 
+.blur {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+    opacity: 0.6;
+}
 
 /* The popup form - hidden by default */
-.form-popup {
-    padding: 5px;
+#overlay {
     display:none;
-    width: 3.5in;
-    border: .5px solid black;
-    background-color: #eeeeee;
+    position:fixed;
+    padding:0;
+    margin:0;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.form-popup {
+    background-color: #87a6dd;
+    color: black;
+    font-weight: 500;
+    font-size: 0.9em;
+    font-family: sans-serif ;
+    padding: 10px;
+    width: 220px;
+    height: 220px;
     position: fixed;
     top: 50%;
     left: 50%;
-    
     transform: translate(-50%, -50%);
-
+    border: 1px solid grey;
+    border-radius: 5px;
   }
-
   form {
     display:flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:space-between;
+    height: 100%;
+
   }
