@@ -31,7 +31,7 @@ formOverlay.addEventListener('click', function (e) {
 
 //Add a new book to the library
 function addBookToLibrary(title, author, numPages, read) {
-    const book = new Book(title, author, numPages, read);
+    const book = new Book(title, author, Intl.NumberFormat().format(numPages), read);
     myLibrary.unshift(book);
     refreshHTMLTable();
 }
@@ -87,4 +87,4 @@ function resetForm() {
 
 }
 
-addBookToLibrary('War and Peace', 'Leo Tolstoy', '1,225', false); //id = 0
+addBookToLibrary('War and Peace', 'Leo Tolstoy', '1225', false); //id = 0
