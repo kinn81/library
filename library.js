@@ -1,8 +1,26 @@
+/*
+** Moving to class based object
+
 function Book(title, author, numPages, hasBeenRead, id) {
     this.title = title;
     this.author = author;
     this.numPages = numPages;
     this.hasBeenRead = hasBeenRead;
+}
+*/
+
+class Book {
+    title;
+    author;
+    numPages;
+    hasBeenRead;
+    id;
+    constructor(title, author, numPages, hasBeenRead, id) {
+        this.title = title;
+        this.author = author;
+        this.numPages = numPages;
+        this.hasBeenRead = hasBeenRead;
+    }
 }
 
 const mainPage = document.getElementById("mainPage"); //main page div container
@@ -79,6 +97,7 @@ function refreshHTMLTable() {
 
 function updateCheckBox(e) {
     myLibrary[e.target.parentElement.parentElement.rowIndex - 1].hasBeenRead = e.target.checked;
+    console.log('in here!');
     if (storage !== 'undefined') storage.setItem('library', JSON.stringify(myLibrary));
 }
 
